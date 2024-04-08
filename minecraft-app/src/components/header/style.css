@@ -48,3 +48,18 @@
 .header__text p + p {
 	margin-top: 0.5em;
 }
+
+.header__button {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.btn {
+	border-radius: 50px;
+}
+
+#btn-lc {
+	background: none;
+	border: 2px solid #fff;
+}

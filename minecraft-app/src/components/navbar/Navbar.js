@@ -10,7 +10,7 @@ const Navbar = () => {
 			<div className="container">
 				<div className="nav-row">
 					<NavLink to="/" className="logo">
-						great-minecraft.ru
+						<em>great</em>-minecraft
 					</NavLink>
 
 					<ul className="nav-list">
@@ -21,18 +21,28 @@ const Navbar = () => {
 									isActive ? activeLink : normalLink
 								}
 							>
-								Home
+								Главная
 							</NavLink>
 						</li>
 
 						<li className="nav-list__item">
 							<NavLink
-								to="/projects"
+								to="/donate"
 								className={({ isActive }) =>
 									isActive ? activeLink : normalLink
 								}
 							>
-								Projects
+								Донат
+							</NavLink>
+						</li>
+						<li className="nav-list__item">
+							<NavLink
+								to="/product"
+								className={({ isActive }) =>
+									isActive ? activeLink : normalLink
+								}
+							>
+								Товары
 							</NavLink>
 						</li>
 						<li className="nav-list__item">
@@ -42,7 +52,7 @@ const Navbar = () => {
 									isActive ? activeLink : normalLink
 								}
 							>
-								Contacts
+								Личный кабинет
 							</NavLink>
 						</li>
 					</ul>

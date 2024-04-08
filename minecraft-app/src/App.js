@@ -9,6 +9,8 @@ import Projects from "./pages/Projects";
 import Project from "./pages/Project";
 import Contacts from "./pages/Contacts";
 import Cabinet from "./pages/Cabinet";
+import Donate from "./pages/Donate";
+import Product from "./pages/Product";
 
 import ScrollToTop from "./utils/scrollToTop"
 
@@ -24,6 +26,8 @@ function App() {
 					<Route path="/project/:id" element={<Project />} />
 					<Route path="/contacts" element={<Contacts />} />
 					<Route path="/cabinet" element={<Cabinet />} />
+					<Route path="/donate" element={<Donate />} />
+					<Route path="/product" element={<Product />} />
 				</Routes>
 				<Footer />
 			</Router>

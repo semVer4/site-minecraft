@@ -1,0 +1,47 @@
+.section-header {
+    padding-top: 50px;
+}
+
+#cabLC {
+    margin-top: 50px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    border-radius: 10px;
+    border: 5px solid var(--accent);
+    width: 450px;
+    margin: 0 auto;
+}
+
+.form input {
+    width: 100%;
+    margin: 10px;
+    border: 2px solid var(--accent);
+    border-radius: 50px;
+    padding: 15px;
+    color: #fff;
+}
+
+.formButton {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.form button {
+    margin-top: 30px;
+}
+
+#btnTwo {
+    background: none;
+    border: 2px solid #fff;
+}
+
+#cabLC {
+    margin-top: 5px;
+}

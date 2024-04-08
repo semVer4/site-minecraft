@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
+import './sign.css';
+
 const Contacts = () => {
 	const navigate = useNavigate();
 
@@ -15,10 +17,12 @@ const Contacts = () => {
 		  try {
 			// Получение информации о пользователе с помощью access токена
 			const accessToken = localStorage.getItem('accessToken');
-			navigate('/cabinet');
 			if (!accessToken) {
 			  throw new Error('Access токен не найден');
 			}
+			const response = await axios.post('http://localhost:3001/check-auth', { accessToken });
+			navigate('/cabinet');
+			console.log(response.data)
 		  } catch (error) {
 			console.error('Ошибка при получении информации о пользователе:', error);
 		  }
@@ -51,14 +55,23 @@ const Contacts = () => {
 	};
   
 	return (
-	  <div>
-		<h1>User Authentication</h1>
-		<input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-		<input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-		<input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-		<button onClick={handleRegister}>Register</button>
-		<button onClick={handleLogin}>Login</button>
-	  </div>
+		<main className="section-header">
+			<div className="container">
+				<h2 className="title-1" id="cabLC">Личный кабинет</h2>
+
+				<div className="form">
+					<form>
+						<input id="login" type="text" placeholder="Ваш Логин" value={username} onChange={(e) => setUsername(e.target.value)} required />
+						<input id="email" type="email" placeholder="Почта" value={email} onChange={(e) => setEmail(e.target.value)} required />
+						<input id="password" type="password" placeholder="Пароль" value={password} onChange={(e) => setPassword(e.target.value)} required />
+						<div className="formButton">
+							<button type="submit" onClick={handleRegister} className="btn">Регистрация</button>
+							<button type="submit" onClick={handleLogin} className="btn" id="btnTwo">Авторизация</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
 	);
 }
 
