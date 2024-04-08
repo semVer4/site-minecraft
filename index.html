@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список игроков на сервере Minecraft</title>
+</head>
+<body>
+  <h1>Список игроков на сервере Minecraft</h1>
+  <ul id="playerList"></ul>
+
+  <script>
+    async function fetchPlayerList(serverIP) {
+      try {
+        const response = await fetch(`https://api.minetools.eu/ping/${serverIP}`);
+        const data = await response.json();
+
+        // Получаем список игроков и выводим на страницу
+        const playerList = document.getElementById('playerList');
+        playerList.innerHTML = data.players.join(', ');
+      } catch (error) {
+        console.error('Ошибка при получении списка игроков:', error);
+      }
+    }
+
+    // Вызываем функцию для получения списка игроков при загрузке страницы
+    fetchPlayerList('135.181.237.60:25718');
+  </script>
+</body>
+</html>
